@@ -1,0 +1,16 @@
+./tesetbench_single.sv
+../rtl/flopr.sv
+../rtl/alu.sv
+../rtl/controller.sv
+../rtl/aludec.sv
+../rtl/adder.sv
+../rtl/regfile.sv
+../rtl/riscvsingle.sv
+../rtl/mux3.sv
+../rtl/dmem.sv
+../rtl/maindec.sv
+../rtl/datapath.sv
+../rtl/extend.sv
+../rtl/top.sv
+../rtl/imem.sv
+../rtl/mux2.sv
