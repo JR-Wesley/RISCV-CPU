@@ -1,4 +1,4 @@
-./testbench_pipeline.sv
+../tb/testbench_pipeline.sv
 ../rtl/ctrl/controller.sv
 ../rtl/ctrl/aludec.sv
 ../rtl/ctrl/maindec.sv
@@ -10,11 +10,11 @@
 ../rtl/datapath/datapath.sv
 ../rtl/datapath/extend.sv
 ../rtl/datapath/mux2.sv
-../rtl/seq_logic/flopr.sv
-../rtl/seq_logic/flopenrc.sv
-../rtl/seq_logic/floprc.sv
-../rtl/seq_logic/flopenr.sv
 ../rtl/dmem.sv
 ../rtl/riscv.sv
 ../rtl/top.sv
 ../rtl/imem.sv
+../rtl/regs/flopr.sv
+../rtl/regs/flopenrc.sv
+../rtl/regs/floprc.sv
+../rtl/regs/flopenr.sv

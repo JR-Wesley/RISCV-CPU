@@ -1,16 +1,32 @@
-module top(
-	input logic clk, reset,
-	output logic [31:0] WriteDataM, DataAdrM,
-	output logic MemWriteM
-	);
+module top (
+  input  logic        clk,
+  input  logic        rst,
+  output logic [31:0] WriteDataM,
+  output logic [31:0] DataAdrM,
+  output logic        MemWriteM
+);
 
-	logic [31:0] PCF, InstrF, ReadDataM;
-	
-	// instantiate processor and memories
-	riscv riscv(clk, reset, PCF, InstrF, MemWriteM, DataAdrM,
-	WriteDataM, ReadDataM);
-	imem imem(PCF, InstrF);
-	dmem dmem(clk, MemWriteM, DataAdrM, WriteDataM, ReadDataM);
+  logic [31:0] PCF, InstrF, ReadDataM;
+
+  // instantiate processor and memories
+  riscv riscv (
+    .*,
+    .reset     (rst),
+    .ALUResultM(DataAdrM)
+  );
+
+  imem imem (
+    .a (PCF),
+    .rd(InstrF)
+  );
+
+  dmem dmem (
+    .*,
+    .we(MemWriteM),
+    .a (DataAdrM),
+    .wd(WriteDataM),
+    .rd(ReadDataM)
+  );
 
 endmodule
 
